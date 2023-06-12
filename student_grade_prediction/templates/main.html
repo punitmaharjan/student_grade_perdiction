@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="../static/fontawesome/css/font-awesome.min.css">
+    
+    <title>Student Grade Prediction</title>
+    <link rel="shortcut icon" 
+    href="{{url_for('static', filename='/images/logo.png')}}" 
+    type="image/x-icon">
+</head>
+<body>
+    <div class="header" id="top">
+        <div class="logo">
+            <img src="{{url_for('static', filename='/images/logo.png')}}" class="logo_img" alt="">
+            <div class="logo_name">Grade analysis</div>
+        </div>
+        <div class="menu">
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+            <a href="#predict">PREDICT</a>
+            <a href="#contact">CONTACT</a>
+            <input type="checkbox" id="darkModeToggle" class="input">
+            <label for="darkModeToggle">
+                <i class="fa fa-sun-o sun"></i>
+                <i class="fa fa-moon-o moon"></i>
+            </label>
+        </div>
+        
+        
+    </div>
+
+    <!--home-->
+    <div class="home" id="home">
+        <div class="welcome">WELCOME</div>
+        <div class="mid">Predict Student Grades With Ease</div>
+        <a href="#about" class="start">Get Started</a>
+    </div>
+
+    <!--about us-->
+    <div class="about" id="about">
+        <div class="ab">
+            <div class="topic">Our Mission</div>
+            <p>Our mission is to help students, parents, and educators make informed decisions about academic performance 
+            by predicting student grades based on various factors. “Student Grade Prediction” is a web-based application 
+            designed with the intent of helping educators to predict the student’s final grade based on range of factors 
+            like study hours, previous grades, etc. and identifying risks related to students to provide them with necessary 
+            support to improve their grades.</p>
+        </div>
+        
+        <div class="ab">
+            <div class="topic">How It Works</div>
+            <p>Using linear regression algorithm and statistical analysis, our application analyzes student data like 
+            previous grades (G1 and G2), mother's education, and number of failures to predict the final grade of a student. 
+            By providing accurate predictions, we aim to assist in identifying areas of improvement and supporting academic 
+            success.</p>
+        </div>
+
+        <div class="ab2">
+            <div class="topic">Our Team</div>
+            <ul>
+                <li>Punit Maharjan</li>
+                <li>Anil Subedi</li>
+                <li>Saral Maharjan</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--Predict-->
+    <div class="predict" id="predict">
+        <div class="left">
+            <div class="int">
+                <div class="hh">G1 (First Period Grade)</div>
+                <span> Numeric : 0 to 20</span>
+            </div>
+
+            <div class="int">
+                <div class="hh">Medu (Mother's Education) </div>
+                <span>
+                    <ul>
+                        <li>0 - None</li>
+                        <li>1 - Primary Education (4th Grade)</li>
+                        <li>2 - 5th to 9th Grade</li>
+                        <li>3 - Secondary Education</li>
+                        <li>4 - Higher Education</li>
+                    </ul>
+            </div>
+        </div>
+        <div class="main">
+            <form action="/" method="POST" class="form">
+                <div class="heading">student grade prediction</div>
+                <div class="inn">
+                    <input type="text" placeholder="Enter Grade of 1st term" name="G1" min="0" max="20">
+                </div>
+                
+                <div class="inn">
+                    <input type="text" placeholder="Enter Grade of 2nd term" name="G2" min="0" max="20">
+                </div>
+
+                <div class="inn">
+                    <input type="text" placeholder="Enter Mother's Education" name="medu" min="0" max="4">
+                </div>
+
+                <div class="inn">
+                    <input type="text" placeholder="Enter Number of Failures" name="failures" min="0">
+                </div>
+
+                <button type="submit">Predict</button>
+            </form>
+        </div>
+        <div class="right">
+            <div class="int">
+                <div class="hh">G2 (Second Period Grade)</div>
+                <span>Numeric : 0 to 20</span>
+            </div>
+            <div class="int">
+                <div class="hh">Failures (No. of Past Failures)</div>
+                <span><ul>
+                    <li>Numeric : 1-2 , then Value : 1 or 2</li>
+                    <li>Numeric : >=3 , then Value: 4</li>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="contact" id="contact">
+            <div class="address">
+                <h3>Address</h3>
+    
+                <p><i class="fa fa-map-marker" aria-hidden="true"></i>Shankhamul-9, Lalitpur, Nepal</p>
+                <h3>Contact Us</h3>
+                <p><a class="a" href="tel:9808894725"><i class="fa fa-phone" aria-hidden="true"></i>9843019444</a></p>
+                <p><a class="a" href="mailto:punitsaur12@gmail.com"><i class="fa fa-envelope" aria-hidden="true"></i>gradeanalytics@gmail.com</a></p>
+                <p><a class="a" href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook"></i>Facebook</a></p>
+                <p><a class="a" href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram"></i>Instagram</a></p>
+            </div>
+            <div class="map">
+                <h3>Location</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14132.853023606951!2d85.329875!3d27.679803!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc94f84d1f057520f!2sNagarjuna%20College%20of%20IT!5e0!3m2!1sen!2snp!4v1656859647002!5m2!1sen!2snp" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        <a href="#home" class="navigate"><i class="fa fa-arrow-up" aria-hidden="true"></i></a>
+    </div>
+    
+    <div class="footer">
+        2023 <i class="fa fa-copyright"></i> Copyright. All Rights Reserved
+    </div>
+
+    
+
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        // Check if the user has a preference for dark mode
+        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // Set the initial state of the toggle switch based on user preference
+        darkModeToggle.checked = prefersDarkMode;
+
+        // Apply the appropriate class to the body element
+        function setDarkMode(value) {
+            if (value) {
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+            }
+        }
+
+        // Toggle dark mode when the toggle switch is clicked
+        darkModeToggle.addEventListener('change', () => {
+            setDarkMode(darkModeToggle.checked);
+        });
+
+        // Initialize the dark mode based on the initial user preference
+        setDarkMode(prefersDarkMode);
+    </script>
+</body>
+</html>
